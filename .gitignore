@@ -1,6 +1,6 @@
 /.vscode
 /randraw
-Record.csv
+*.csv
 
 # Windows default autosave extension
 *.asv
