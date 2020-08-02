@@ -6,17 +6,18 @@ classdef Positron
     properties
         coord = [0, 0, 0];
         dir = [0, 0, 0];
+        scatter = 0;
     end
     
     methods
-        function obj = Positron()
-            global V_INITIAL; % parameter for initial positron velocity distribution
+        function obj = Positron(vInitial)
             obj.coord = [0, 0, 0];
-            dir_r = randraw('maxwell', V_INITIAL);
+            dir_r = randraw('maxwell', vInitial);
             dir_theta = 2 * pi * rand();
             dir_phi = asin(2 * rand() - 1);
             [obj.dir(1), obj.dir(2), obj.dir(3)] =...\
                 sph2cart(dir_theta, dir_phi, dir_r);
+            obj.scatter = 0;
         end
 
         function [dir_theta, dir_phi, dir_r] = getDirSph(obj)

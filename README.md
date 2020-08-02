@@ -1,12 +1,18 @@
 # PMRMC
 
+**Meng, Xiangxi**, PhD, Beijing Cancer Hospital \& Peking University
+
+**Jin Lujia**, Peking University
+
+<mengxiangxi@pku.edu.cn>
+
 ## Problem
 
 In PET/MR imaging, a special phenomenon is observed. For positrons with longer ranges, the PSF measured in air is deformed. However, without the magnetic field, the positron range is approximately spherical.
 
 The aim of this code is to reproduce the phenomenon.
 
-![Scheme](./PositronRangeFigure.png)
+![Scheme](./Figures/PositronRangeFigure.png)
 
 *The schematic representation of the phenomenon a) with and b) without the magnetic field. The preliminary results are shown in c).*
 
@@ -33,10 +39,10 @@ The aim of this code is to reproduce the phenomenon.
 
 ## Output data format
 
-The output data is in 6 columns.
+The output data is in 7 columns.
 
 ```csv
-Position X, Position Y, Position Z, Velocity X, Velocity Y, Velocity Z
+Position X, Position Y, Position Z, Velocity X, Velocity Y, Velocity Z, Number of Scattering
 ```
 
 ## Functionalities
@@ -47,3 +53,10 @@ Position X, Position Y, Position Z, Velocity X, Velocity Y, Velocity Z
 ## Dependencies
 
 - [RANDRAW](https://ww2.mathworks.cn/matlabcentral/fileexchange/7309-randraw)
+- [export_fig](https://www.mathworks.com/matlabcentral/fileexchange/23629-export_fig)
+
+## Plan
+
+The further plan includes to use a more dedicated Monte Carlo simulation platform to validate these results, and to introduce parallel computation in the process.
+
+Aug-2-2020
