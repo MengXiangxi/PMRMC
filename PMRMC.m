@@ -171,15 +171,18 @@ p_out = p;
 
 end
 
-function terminate_flag = isTerminate(~)
+function terminate_flag = isTerminate(p)
 % isAnnihilate
 %   Determine if the positron is annihilated
 % Output paramter:
 % terminate_flag - 0 - not teminate, 1 - terminate
 
-global ANNIHILATE_THRESHOLD
+global ANNIHILATE_THRESHOLD;
+[~, ~, v_p] = p.getDirSph();
+annihilate_probab = atan(ANNIHILATE_THRESHOLD./v_p)./pi*2;
 
-if rand() < ANNIHILATE_THRESHOLD
+
+if rand() < annihilate_probab
     % In this simplified model, the difference between spatial uniformity
     % and time uniformity is ignored.
     terminate_flag = 1;
